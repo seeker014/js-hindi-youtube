@@ -34,7 +34,34 @@ console.log(typeof myFunction); //function
 
 console.log(typeof null); //object
 
+//https://262.ecma-international.org/5.1/#sec-11.4.3 
 
+//Memory allocation:
+
+// Stack (primitive data types), Heap (reference data types)
+
+let name="abhinav"
+
+let anothername=name
+anothername=chiksy
+
+console.log(name); //abhinav
+console.log(anothername); //chiksy , since copy is changed , not the original name
+
+let user1={
+    email:"user@google.com",
+    upi:"user@ybl",
+}
+
+let user2 = user1 
+
+user2.email = "hello@google.com" // .email is used to access members of objects
+// Now user1 email is also changed since it was passed by reference
+
+console.log(user1.email); //hello@google.com
+console.log(user2.email); //hello@google.com
+
+// so stack always gives a copy of primitive data types and heap gives reference of non-primitive data types.
 
 
 
