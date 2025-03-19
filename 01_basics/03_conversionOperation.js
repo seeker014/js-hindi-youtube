@@ -1,11 +1,11 @@
-let score=33
+// let score=33
 
-console.log(typeof score); // number is printed
-console.log(typeof(score)); // number is printed
+// console.log(typeof score); // number is printed
+// console.log(typeof(score)); // number is printed
 
-let score="33"
-let valueInNumber = Number(score) //converting string to number
-console.log(typeof valueInNumber);
+// let score="33"
+// let valueInNumber = Number(score) //converting string to number
+// console.log(typeof valueInNumber);
 
 let score="33abc"
 let valueInNumber = Number(score) //converting string to number
