@@ -42,7 +42,35 @@ console.log(Object.entries(tinder)); //[ [ 'id', '123' ], [ 'name', 'sammy' ], [
 
 console.log(tinder.hasOwnProperty('name')); //true , if name not present , returns false
 
+// de-structuring of objects
+const course={
+    name:"abc",
+    price:999,
+    teacher:"hitesh"
+}
+
+const {teacher}=course //means we dont need to type course.teacher to access it again and again
+console.log(teacher); //hitesh
+
+const {teacher:tea}=course //renaming it tea
+console.log(tea); //hitesh
+
+/* const navbar=({company}) => {
+
+ } */   // will come in react
+// navbar(company="amazon")
 
 
+//APIs - objects without a name
 
+// {
+//     "name":"abhinav" , 
+//     "coursename":"abc",
+//     "price":"free"  //keys have to be in string
+// }
 
+// [
+//     {},
+//     {},
+//     {}
+// ]
