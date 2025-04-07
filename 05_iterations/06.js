@@ -2,15 +2,15 @@
 
 // const values=coding.forEach(  (item)=>{
 //     console.log(item);
-//     return item //foreach does not return any value
+//     return item     //forEach does not return any value
 // })
 
-// console.log(values); //undefined
+// console.log(values); //undefined , since forEach does not return any value
 
 const nums=[1,2,3,4,5,6,7,8,9,10]
 
-// const newnums = nums.filter( (num)=>num>4 )
-// console.log(newnums); // [5,6,7,8,9,10]
+// const newnums = nums.filter( (num)=>num>4 )   // filter returns values
+// console.log(newnums); // [5,6,7,8,9,10]   
 
 // const newnums=nums.filter( (num)=>{
 //     return num>4    //if we open scope {} , we have to write return keyword
@@ -42,11 +42,3 @@ console.log(mybooks);
 // [
 //     { title: 'book 2', genre: 'history' }
 // ]
-
-
-
-
-
-
-
-

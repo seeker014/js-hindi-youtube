@@ -27,5 +27,5 @@ const cart=[
     }
 ]
 
-const amount=cart.reduce((acc,item)=> acc+item.price , 0)
+const amount=cart.reduce((acc,item)=> acc+item.price , 0)    // item denotes objects inside array
 console.log(amount); //22996

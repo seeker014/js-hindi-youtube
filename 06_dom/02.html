@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM | Chai aur Code </title>
+</head>
+<body style="background-color:#212121; color:#fff;">
+    <div class="parent">
+        <div class="day"> Monday </div>
+        <div class="day"> tuesday </div>
+        <div class="day"> wednesday </div>
+        <div class="day"> thursday </div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent); //
+    //console.log(parent.children[1]);   <!--tuesday-->
+
+    // for (let i = 0;  i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }  // monday to thursday , inside script tag write comments like this only
+    parent.children[1].style.color="orange"
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const dayOne=document.querySelector('.day') //selects pehla wala
+    console.log(dayOne); // monday
+    console.log(dayOne.parentElement); // gives parent again
+    console.log(dayOne.nextElementSibling); //tuesday
+    
+    console.log("NODES:", parent.childNodes); //NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+// 0: text
+// 1: div.day
+// 2: text
+// 3: div.day
+// 4: text
+// 5: div.day
+// 6: text
+// 7: div.day
+// 8: text
+// length: 9
+
+</script>
+</html>
