@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Code With Chiksy </title>
+</head>
+<body style="background-color:#212121;color:#fff;">
+    <ul class="language">
+        <li> Javascript </li>
+    </ul>
+</body>
+<script>
+     // adding elements
+     function addlanguage(lang){
+       const li = document.createElement('li');
+       li.innerHTML=`${lang}`       // here rewriting the text node
+       document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("Python");  //Javascript , Python
+
+    // optimal way of adding element
+    function addlang (langname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname)); // can write directly , making a new text node
+        document.querySelector('.language').appendChild(li);
+    }
+    addlang('Golang'); // js, python , golang
+
+    // editing values
+
+    const secondlang=document.querySelector("li:nth-child(2)")
+    // secondlang.innerHTML="Mojo";   can again rewrite
+    const newli=document.createElement('li');
+    newli.textContent="Mojo";    //another way of making text node 
+    secondlang.replaceWith(newli);   // Python is replaced by Mojo
+
+    const firstlang=document.querySelector("li:first-child");
+    firstlang.outerHTML='<li> TypeScript </li>'  //js ke badle typescript
+
+    //removing elements
+    const lastlang=document.querySelector("li:last-child")
+    lastlang.remove();   //golang gets removed
+
+</script>
+</html>
