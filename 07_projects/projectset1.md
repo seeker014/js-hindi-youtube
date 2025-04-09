@@ -54,16 +54,33 @@ form.addEventListener('submit',function(e){
   const results = document.querySelector('#results');
 
   if (height==='' || height<0 || isNaN(height)) {
-    results.innerHTML=Please give a valid height ${height};
+    results.innerHTML=`Please give a valid height ${height}`;
   }
   else if (weight==='' || weight<0 || isNaN(weight)) {
-    results.innerHTML=Please give a valid weight ${weight};
+    results.innerHTML=`Please give a valid weight ${weight}`;
   }
   else{
     const bmi = (weight/((height*height)/10000)).toFixed(2);
     // show the result
-    results.innerHTML=<span> ${bmi} </span>
+    results.innerHTML=`<span> ${bmi} </span>`
   }
 
 })
+```
+
+## Project 3
+``` Javascript
+const clock=document.getElementById ('clock')
+//const clock=document.querySelector('#clock')
+
+let date=new Date();
+console.log(date.toLocaleString());
+// this is printing date once , we need digital clock that changes every second
+//below 1000 is time interval in ms
+setInterval(function(){
+  let date=new Date()
+  //console.log(date.toLocaleString()); //prints continuously in console
+  clock.innerHTML=date.toLocaleString();
+},1000) //prints inside clock element
+
 ```
