@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Chai aur Javascript </h1>
+    <button id="start"> Start </button>
+    <button id="stop"> Stop </button>
+</body>
+<script>
+    
+    setInterval(function(){
+        console.log("ABHINAV");
+    },1000)  //after every 1 sec , abhinav is printing
+
+
+    const sayDate = function(str){
+        console.log(str, Date.now()); // hi 1688898577699 , hi 1688878888899 , ....   in new lines
+    }
+
+    const intervalId = setInterval(sayDate, 1000, "hi")
+
+    clearInterval(intervalId)  //stops printing
+</script>
+</html>

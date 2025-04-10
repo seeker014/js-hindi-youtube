@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Chai aur code </h1>
+    <button id="stop"> Stop </button>
+</body>
+<script>
+
+    setTimeout(function(){
+        console.log("Abhinav");
+    },2000) //prints name after 2 secs
+
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+
+    setTimeout(sayHitesh , 2000); //Hitesh (reference is passed)
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000) //after 2 secs, 'Chai aur Code' changes to 'best JS series'
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)   //if we click on stop before 2 secs,then text does not change on web page (clearTimeout)
+        console.log("STOPPED")
+    })
+</script>
+</html>

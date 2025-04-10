@@ -84,6 +84,7 @@ setInterval(function(){
 },1000) //prints inside clock element
 
 ```
+
 ## Project 4
 ``` Javascript
 let num = parseInt(Math.random()*100+1)
@@ -193,3 +194,71 @@ function newGame(){
 }
 
 ```
+
+## Project 5
+
+```Javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'>
+  <table>
+
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key===' ' ? 'Space':e.key}</td>   
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+  </div>
+  `;
+
+});
+
+```
+
+## Project 6
+
+``` Javascript
+//generate a random color
+
+const randomcolor=function(){
+  const hex="0123456789ABCDEF" //16 positions
+  let color='#'
+  for (let i=0;i<6;i++) //6 is length of color hexcode
+  {
+    color+=hex[Math.floor(Math.random()*16)];
+  }
+  return color;
+}
+
+let intervalID;
+const startChangingColor=function(){
+  
+  if (!intervalID){
+  intervalID=setInterval(changeBGcolor,1000);
+  }
+
+  function changeBGcolor(){
+  document.body.style.backgroundColor=randomcolor();
+  }
+}
+
+const stopChangingColor=function(){
+  clearInterval(intervalID);
+  intervalID=null;  //clear value of variable
+}
+
+document.querySelector('#start').addEventListener('click',startChangingColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
+
+```
+
