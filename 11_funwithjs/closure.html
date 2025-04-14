@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+    <script>
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // Lexical Scoping :
+    
+    // function outer(){
+    //     let username = "hitesh"
+    //     console.log("OUTER", secret);  // cannot access secret variable from inner function
+
+    //     function inner(){        // all inner functions get access of variables of outer functions 
+    //         let secret = "143"
+    //         console.log("inner", username);
+    //     }
+
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);   // cannot access secret variable from inner function
+    //     }
+
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+    // Closure : when we return a function , we also return its lexical scope
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;  // yaha name bhi return hua hai since displayName ka lexical scope me wo tha
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    </script>
+
+    <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        // We cant write so many lines again and again , so make a clickHandler 
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){  // this function is returned and because of lexical scoping , we can return the color which is parameter of outer function
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+        // onclick needs a function as return type rather than just executing the function
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+    </script>
+</html>
